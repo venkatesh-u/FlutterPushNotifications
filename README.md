@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # my_app
 
 A new Flutter project.
@@ -18,4 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 =======
 # FlutterPushNotifications
 Handling Push Notifications for both iOS &amp; Android
->>>>>>> c23cefeb2c0e128aec090062fd9145335fe67c7a
+
