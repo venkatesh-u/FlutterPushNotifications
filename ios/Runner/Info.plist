@@ -20,6 +20,11 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+<<<<<<< HEAD
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<string>NO</string>
+=======
+>>>>>>> 2c76370ab2650903094b5aff0d3a5ad032422859
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

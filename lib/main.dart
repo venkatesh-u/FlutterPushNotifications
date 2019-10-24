@@ -99,6 +99,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
+    if (Platform.isIOS) iOS_Permission();
+     _firebaseMessaging.getToken().then((token){
+      print(token);
+        print('on token.... $token');
+    });
+=======
+>>>>>>> 2c76370ab2650903094b5aff0d3a5ad032422859
     _firebaseMessaging.configure(
       onMessage: (Map<String, dynamic> message) {
         print('on message $message');
@@ -112,10 +120,25 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     _firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, badge: true, alert: true));
+<<<<<<< HEAD
+   
+  }
+  void iOS_Permission() {
+  _firebaseMessaging.requestNotificationPermissions(
+      IosNotificationSettings(sound: true, badge: true, alert: true)
+  );
+  _firebaseMessaging.onIosSettingsRegistered
+      .listen((IosNotificationSettings settings)
+  {
+    print("Settings registered: $settings");
+  });
+}
+=======
     _firebaseMessaging.getToken().then((token){
       print(token);
     });
   }
+>>>>>>> 2c76370ab2650903094b5aff0d3a5ad032422859
 
   @override
   void dispose() {
