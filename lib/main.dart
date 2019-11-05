@@ -4,9 +4,6 @@ import 'Second.dart';
 import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-
-
-
 // import 'Second.dart';
 // import 'navigation_router.dart';
 // import 'package:english_words/english_words.dart';
@@ -21,7 +18,7 @@ void main() => runApp(MaterialApp(
         '/': (context) => FirstScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         //'/second': (context) => SecondScreen(),
-        "/SecondScreen" : (BuildContext context) => SecondScreen()
+        "/SecondScreen": (BuildContext context) => SecondScreen()
       },
     ));
 
@@ -43,8 +40,6 @@ void main() => runApp(MaterialApp(
 //   home: FirstScreen(),
 //   routes:routes
 // ));
-
-
 
 class FirstScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -70,7 +65,6 @@ class FirstScreen extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -93,20 +87,18 @@ class _MyHomePageState extends State<MyHomePage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   final myController = TextEditingController();
 
+  FirebaseMessaging _firebaseMessaging = new FirebaseMessaging();
 
-   FirebaseMessaging _firebaseMessaging = new FirebaseMessaging();
- 
   @override
   void initState() {
     super.initState();
-<<<<<<< HEAD
     if (Platform.isIOS) iOS_Permission();
-     _firebaseMessaging.getToken().then((token){
+    
+    _firebaseMessaging.getToken().then((token) {
       print(token);
-        print('on token.... $token');
+      print('on token.... $token');
     });
-=======
->>>>>>> 2c76370ab2650903094b5aff0d3a5ad032422859
+
     _firebaseMessaging.configure(
       onMessage: (Map<String, dynamic> message) {
         print('on message $message');
@@ -120,25 +112,16 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     _firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, badge: true, alert: true));
-<<<<<<< HEAD
-   
   }
+
   void iOS_Permission() {
-  _firebaseMessaging.requestNotificationPermissions(
-      IosNotificationSettings(sound: true, badge: true, alert: true)
-  );
-  _firebaseMessaging.onIosSettingsRegistered
-      .listen((IosNotificationSettings settings)
-  {
-    print("Settings registered: $settings");
-  });
-}
-=======
-    _firebaseMessaging.getToken().then((token){
-      print(token);
+    _firebaseMessaging.requestNotificationPermissions(
+        IosNotificationSettings(sound: true, badge: true, alert: true));
+    _firebaseMessaging.onIosSettingsRegistered
+        .listen((IosNotificationSettings settings) {
+      print("Settings registered: $settings");
     });
   }
->>>>>>> 2c76370ab2650903094b5aff0d3a5ad032422859
 
   @override
   void dispose() {
@@ -224,8 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Center(
+        body: new Center(
         child: Container(
           color: Colors.white,
           child: Padding(
@@ -234,13 +216,6 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(
-                  height: 155.0,
-                  child: Image.asset(
-                    "../assets/logo.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
                 SizedBox(height: 45.0),
                 emailField,
                 SizedBox(height: 25.0),
@@ -256,13 +231,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-      ),
-    ));
+    ),);
   }
 }
 
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
-  }
+@override
+Widget build(BuildContext context) {
+  // TODO: implement build
+  return null;
+}
